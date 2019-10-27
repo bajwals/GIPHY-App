@@ -28,7 +28,7 @@ $("#submit").on("click", function(event){
 
 $(".btn").on("click", function(){
     console.log("test")
-    var btnText = "doing ok";
+    var btnText = $(this).val();
     btnText = btnText.replace(/\s/g, "")
     console.log(btnText);
     var apiKey = "5sO9rKbLKobaF7JHFPtGwPKdE5w37eb5";
