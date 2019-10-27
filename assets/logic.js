@@ -28,7 +28,8 @@ $("#submit").on("click", function(event){
 
 $(".btn").on("click", function(){
     console.log("test")
-    var btnText = $(this).val();
+    // var btnText = $(this).val();
+    var btnText = "esports"
     btnText = btnText.replace(/\s/g, "")
     console.log(btnText);
     var apiKey = "5sO9rKbLKobaF7JHFPtGwPKdE5w37eb5";
