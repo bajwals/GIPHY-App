@@ -12,26 +12,13 @@ function renderFavorites() {
     }
 }
 
-$("#submit").on("click", function(event){
-    event.preventDefault();
-    userSearch = $("#search").val().trim();
-    if (userSearch !== "") {
-        favorites.push(userSearch);
-        renderFavorites();
-        $("#search").fadeOut(20);
-        $("#search").val("");
-        $("#search").fadeIn(300);
-    } else{
-        console.log("You didn't enter anything...")
-    };
-})
-
-$(".btn").on("click", function(){
-    console.log("test")
-    // var btnText = $(this).val();
-    var btnText = "esports"
+function handleClick() {
+    var btnText = $(this).val();
     btnText = btnText.replace(/\s/g, "")
     console.log(btnText);
+}
+
+function updateImages() {
     var apiKey = "5sO9rKbLKobaF7JHFPtGwPKdE5w37eb5";
     var queryURL= "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + btnText + "&limit=10";
     console.log(queryURL)
@@ -48,7 +35,25 @@ $(".btn").on("click", function(){
         $(".giphy-display").prepend(image);
         }
     })
-});
+}
+
+$("#submit").on("click", function(event){
+    event.preventDefault();
+    userSearch = $("#search").val().trim();
+    if (userSearch !== "") {
+        favorites.push(userSearch);
+        renderFavorites();
+        $("#search").fadeOut(20);
+        $("#search").val("");
+        $("#search").fadeIn(300);
+    } else{
+        console.log("You didn't enter anything...")
+    };
+})
+
+$(".btn").on("click", handleClick());
+
+
 
 renderFavorites();
 
