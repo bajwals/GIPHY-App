@@ -50,6 +50,5 @@ $(".btn").on("click", function(){
     })
 });
 
-
 renderFavorites();
 
